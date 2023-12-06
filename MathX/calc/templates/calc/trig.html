@@ -7,7 +7,7 @@
 </head>
 <body>
     <a href="{% url 'zconv' %}">Конвентер</a>
-    <a href="{% url 'trig' %}">Операции в тригонометрической форме</a>
+    <a href="{% url 'home' %}">Главная</a>
     <h1>MathX</h1>
     <p>Формат записи комплексного числа: z = x+iy,</p>
     <p>где</p>
@@ -15,16 +15,21 @@
     <p>y - мнимая часть комлексного числа</p>
     <p>i - мнимая единица</p>
     <form action="result">
-        <input type="text" name="zn1" placeholder="Введите комплексное число 1">
+        <input type="text" name="znt1" placeholder="Введите комплексное число 1">
         <br>
         <br> 
-        <input type="text" name="zn2" placeholder="Введите комплексное число 2">
+        <input type="text" name="znt2" placeholder="Введите комплексное число 2">
         <br>
         <br>
-        <button type="submit" name="sum">Sum</button>
-        <button type="submit" name="diff">Diff</button>
         <button type="submit" name="mult">Mult</button>
         <button type="submit" name="div">Div</button>
+        <br>
+        <br> 
+        <input type="text" name="znt" placeholder="Введите комплексное число 1">
+        <br>
+        <br> 
+        <button type="submit" name="^">^</button>
+        <button type="submit" name="sqrt">SQRT</button>
     
     </form>
     </div>
