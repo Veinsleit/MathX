@@ -2,10 +2,14 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('trig/', views.trig, name='trig'),
-    path('zconv/', views.conv, name='zconv'),
-    path('result/', views.calc, name='result'),
-    path('zconv/resultz/', views.convz, name='resultz'),
+    #path('main/', views.main, name = 'main'),
+    path('', views.main, name='main'),
+    path('algcalc/', views.algcalc, name='algcalc'),
+    path('algcalc/alganswer/', views.alganswer, name='alganswer'),
+    path('algtotrig/', views.algtotrig, name='algtotrig'),
+    path('algtotrig/convz', views.convz, name='convz'),
+    path('trigcalc/', views.trigcalc, name='trigcalc'),
+    path('trigcalc/triganswer', views.triganswer, name='triganwser'),  
+    path('about/', views.about, name='about'),
 ]
 

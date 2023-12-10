@@ -1,0 +1,22 @@
+{% extends 'calc/layout.html' %}
+{% load static %}
+{% block content %}
+  <div class="im">
+    <img src="{% static 'calc/img/algcalc.png' %}">
+  </div>
+  <div class="features">
+    <form action="alganswer">
+      z = <input type="text" name="zn1" placeholder="">
+      <br>
+      <br> 
+      w = <input type="text" name="zn2" placeholder="">
+      <br>
+      <br>
+      <button type="submit" name="sum">Сумма</button>
+      <button type="submit" name="diff">Разность</button>
+      <button type="submit" name="mult">Произведение</button>
+      <button type="submit" name="div">Деление</button>
+    </form>
+  </div>
+{% endblock %}
+

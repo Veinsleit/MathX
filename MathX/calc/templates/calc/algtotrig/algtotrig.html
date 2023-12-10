@@ -1,0 +1,15 @@
+{% extends 'calc/layout.html' %}
+{% load static %}
+{% block content %}
+  <div class="im">
+    <img src="{% static 'calc/img/algtotrig.png' %}">
+  </div>
+  <div class="features">
+    <form action="algtotriganswer">
+      <input type="text" name="zin" placeholder="">
+      <br>
+      <br>
+      <button type="submit" name="convert">Перевести</button>
+    </form>
+  </div>
+{% endblock %}

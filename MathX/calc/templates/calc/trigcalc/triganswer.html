@@ -1,0 +1,9 @@
+{% extends 'calc/layout.html' %}
+{% load static %}
+{% block content %}
+  <img src="{% static 'calc/img/trigcalc.png' %}">
+  <div class="features">
+    Ответ: 
+    <p>{{answer}}</p> 
+  </div>
+{% endblock %}

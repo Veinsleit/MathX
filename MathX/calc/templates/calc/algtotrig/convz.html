@@ -1,0 +1,10 @@
+{% extends 'calc/layout.html' %}
+{% load static %}
+{% block content %}
+  <img src="{% static 'calc/img/algtotrig.png' %}">
+  <div class="features">
+    Ответ: 
+    <p>{{zconv}}</p> 
+  </div>
+{% endblock %}
+

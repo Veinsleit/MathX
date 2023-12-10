@@ -1,0 +1,27 @@
+{% extends 'calc/layout.html' %}
+{% load static %}
+{% block content %}
+<div class="im">
+  <img src="{% static 'calc/img/trigcalc.png' %}">
+</div>
+<div class="features">
+  <form action="triganswer">
+    <input type="text" name="znt1" placeholder="Введите КЧ 1">
+    <br>
+    <br> 
+    <input type="text" name="znt2" placeholder="Введите КЧ 2">
+    <br>
+    <br>
+    <button type="submit" name="mult">Mult</button>
+    <button type="submit" name="div">Div</button>
+    <!-- <br>
+    <br> 
+    <input type="text" name="znt" placeholder="Введите КЧ">
+    <br>
+    <br> 
+    <button type="submit" name="exp">Exp</button>
+    <button type="submit" name="sqrt">SQRT</button>    -->
+  </form>
+</div>
+{% endblock %}
+
