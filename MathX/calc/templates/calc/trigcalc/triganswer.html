@@ -1,9 +1,15 @@
 {% extends 'calc/layout.html' %}
 {% load static %}
+{% block title %}
+  Операции в тригонометрической форме
+{% endblock %}
 {% block content %}
-  <img src="{% static 'calc/img/trigcalc.png' %}">
+  <!-- <div class="im">
+    <img src="{% static 'calc/img/trigcalc.png' %}">
+  </div> -->
   <div class="features">
     Ответ: 
     <p>{{answer}}</p> 
+    <a href="{% url 'trigcalc' %}">Назад</a>
   </div>
 {% endblock %}

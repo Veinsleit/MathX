@@ -2,60 +2,81 @@ body {
     background: #2c2c2c;
 }
 
-aside {
-    float: left;
-    background: black;
-    width: 30%;
-    padding: 2.25%;
-    height: 100vh;
-    color: #fff;
-    border-right: 5px solid #ff6d00;
+/* .center {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #a5addb;
+    padding: 10px;
+  } */
+
+#logo {
+    height: 200px;
+    width: auto;
 }
 
-aside img {
+body {
+    /* float: left; */
+    background:  #2c2c2c;
+    /* width: 30%;
+    padding: 2.25%;
+    height: 100vh; */
+    color: white;
+    /* border-right: 5px solid #ff6d00; */
+}
+
+/* aside img {
     width: 315px;
     height: 200px;
+} */
+
+body nav .navbar-nav h3 {
+    margin-top: 60px;
 }
 
-aside h3 {
-    margin-top: 30px;
-}
+/* body nav {
+    margin-top: 60px;
+    border-bottom: 20px solid #ff6d00;
+} */
 
-aside a {
+body nav .navbar-nav a {
     text-decoration: none;
     text-align: left;
 }
 
-aside ul li, footer a {
-    color: #fff;
+body nav .navbar-nav ul li, footer a {
+    color: white;
     margin-top: 20px;
     transition: transform .6s ease;
 }
 
-aside ul li:hover, aside ul a:hover, footer a:hover {
+body nav .navbar-nav ul li:hover, ul a:hover, footer a:hover, main .features a:hover {
     color: #ff6d00;
     text-decoration: none;
     transform: scale(1.05);
 }
 
-aside footer {
-    margin-top: 40px;
+footer {
+    margin-top: 250px;
+    color: #fff;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
 }
 
 main .features {
-    float: left;
+    float: center;
     color: #fff;
     text-align: center;
     width: 70%;
 }
-main .features p {
-    max-width: 400px;
-    text-align: center;
-    margin: 20px auto;
-}
 
-main {
+main .features a {
+    text-decoration: none;
+    color: #fff;
     text-align: center;
+    width: 70%;
 }
 
 main .about {
@@ -63,6 +84,32 @@ main .about {
     color: #fff;
     text-align: center;
     width: 70%;
+    margin-top: 20px;
+}
+
+main .contacts {
+    float: left;
+    color: #fff;
+    text-align: center;
+    width: 70%;
+    margin-top: 20px;
+}
+
+main .main {
+    color: #fff;
+    margin-top: 150px;
+}
+
+body main {
+    text-align: center;
+}
+
+body div {
+    margin-left: 100px;
+    background: #2c2c2c;
+    text-align: center;
+    
+
 }
 
 

@@ -13,36 +13,52 @@
     </title>
   </head>
   <body>
-    <aside>
-      <div class="container">
-        <a href="{% url 'main' %}">
-          <img src="{% static 'calc/img/logo.png' %}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
+            crossorigin="anonymous">
+    </script>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'main' %}">
+          <img src="{% static 'calc/img/logo.png' %}" id="logo">
         </a>
-        <h3>КОМПЛЕКСНЫЕ ЧИСЛА</h3>
-        <ul>
-          <a href="{% url 'algcalc' %}">
-            <li>Операции в алгебраической форме</li>
-          </a>
-          <a href="{% url 'algtotrig' %}">
-            <li>Перевод из алгебраической формы в тригонометрическую</li>
-          </a>
-          <a href="{% url 'trigcalc' %}">
-            <li>Операции в тригонометрической форме</li>
-          </a>
-        </ul>
-        <footer class="border-top text-center py-3">
-          <p>
-            © 2023 Copyright Math-<span style="color:#ff6d00">X</span>
-          </p>
-          <a href="{% url 'about' %}">
-            О нас
-          </a>   
-        </footer> 
-      </div> 
-    </aside>
+        <button class="navbar-toggler" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#navbarNavAltMarkup" 
+                aria-controls="navbarNavAltMarkup" 
+                aria-expanded="false" 
+                aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <h3>КОМПЛЕКСНЫЕ ЧИСЛА</h3>
+            <ul>
+              <a href="{% url 'algcalc' %}">
+                <li>Операции в алгебраической форме</li>
+              </a>
+              <a href="{% url 'algtotrig' %}">
+                <li>Перевод из алгебраической формы в тригонометрическую</li>
+              </a>
+              <a href="{% url 'trigcalc' %}">
+                <li>Операции в тригонометрической форме</li>
+              </a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
     <main>
       {% block content %}
       {% endblock %}
     </main>
   </body>
+  <footer class="border-top text-center py-3">
+    <p>
+      © 2023 Copyright Math-<span style="color:#ff6d00">X</span>
+    </p>
+    <a href="{% url 'about' %}">О нас</a>  
+    <a href="{% url 'contacts' %}">Контакты</a>
+  </footer> 
 </html>

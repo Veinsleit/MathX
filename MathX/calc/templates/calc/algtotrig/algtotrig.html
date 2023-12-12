@@ -1,12 +1,16 @@
 {% extends 'calc/layout.html' %}
 {% load static %}
+{% block title %}
+  Перевод из алгебраической формы в тригонометрическую
+{% endblock %}
 {% block content %}
-  <div class="im">
+  <!-- <div class="im">
     <img src="{% static 'calc/img/algtotrig.png' %}">
-  </div>
+  </div> -->
   <div class="features">
-    <form action="algtotriganswer">
-      <input type="text" name="zin" placeholder="">
+    <h1>Формат ввода комплексного числа (КЧ): x + iy</h1>
+    <form action="convz">
+      <input type="text" name="zin" placeholder="Введите КЧ">
       <br>
       <br>
       <button type="submit" name="convert">Перевести</button>

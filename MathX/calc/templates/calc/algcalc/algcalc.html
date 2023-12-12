@@ -1,5 +1,8 @@
 {% extends 'calc/layout.html' %}
 {% load static %}
+{% block title %}
+  Операции в алгебраической форме
+{% endblock %}
 {% block content %}
   <div class="im">
     <img src="{% static 'calc/img/algcalc.png' %}">
@@ -12,9 +15,9 @@
       w = <input type="text" name="zn2" placeholder="">
       <br>
       <br>
-      <button type="submit" name="sum">Сумма</button>
-      <button type="submit" name="diff">Разность</button>
-      <button type="submit" name="mult">Произведение</button>
+      <button type="submit" name="sum">Сложение</button>
+      <button type="submit" name="diff">Вычитание</button>
+      <button type="submit" name="mult">Умножение</button>
       <button type="submit" name="div">Деление</button>
     </form>
   </div>

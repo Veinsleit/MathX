@@ -1,9 +1,12 @@
 {% extends 'calc/layout.html' %}
 {% load static %}
+{% block title %}
+  Операции в тригонометрической форме
+{% endblock %}
 {% block content %}
-<div class="im">
+<!-- <div class="im">
   <img src="{% static 'calc/img/trigcalc.png' %}">
-</div>
+</div> -->
 <div class="features">
   <form action="triganswer">
     <input type="text" name="znt1" placeholder="Введите КЧ 1">
@@ -12,15 +15,16 @@
     <input type="text" name="znt2" placeholder="Введите КЧ 2">
     <br>
     <br>
-    <button type="submit" name="mult">Mult</button>
-    <button type="submit" name="div">Div</button>
-    <!-- <br>
+    <button type="submit" name="mult">Умножение</button>
+    <button type="submit" name="div">Деление</button>
+    <br>
     <br> 
     <input type="text" name="znt" placeholder="Введите КЧ">
     <br>
-    <br> 
-    <button type="submit" name="exp">Exp</button>
-    <button type="submit" name="sqrt">SQRT</button>    -->
+    <br>
+    <input type="text" name="zn" placeholder="Введите степень"> 
+    <button type="submit" name="exp">Возведение в степень</button>
+    <!-- <button type="submit" name="sqrt">SQRT</button>    -->
   </form>
 </div>
 {% endblock %}

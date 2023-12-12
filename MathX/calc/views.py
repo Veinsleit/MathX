@@ -10,6 +10,10 @@ def about(request):
     template = 'calc/about.html'
     return render(request, template)
 
+def contacts(request):
+    template = 'calc/contacts.html'
+    return render(request, template)
+
 def algcalc(request):
     template = 'calc/algcalc/algcalc.html'
     return render(request, template)
@@ -28,28 +32,28 @@ def alganswer(request):
     z2c = return_complex_number(z2)
 
     if request.GET.get('sum') == "":
-        ca = z1c+z2c #complex answer
+        ca = z1c+z2c 
         real = str(ca.real)
         imag = str(ca.imag)
         answer = 'z + w = '+'('+z1+')'+' + '+'('+z2+')'+' = '+real+' + i'+imag
 
     elif request.GET.get('diff') == "":
-        ca = z1c-z2c #complex answer
+        ca = z1c-z2c 
         real = str(ca.real)
         imag = str(ca.imag)
-        answer = 'z + w = '+'('+z1+')'+' + '+'('+z2+')'+' = '+real+' + i'+imag
+        answer = 'z - w = '+'('+z1+')'+' - '+'('+z2+')'+' = '+real+' + i'+imag
 
     elif request.GET.get('mult') == "":
-        ca = z1c*z2c #complex answer
+        ca = z1c*z2c 
         real = str(ca.real)
         imag = str(ca.imag)
-        answer = 'z + w = '+'('+z1+')'+' + '+'('+z2+')'+' = '+real+' + i'+imag
+        answer = 'z * w = '+'('+z1+')'+' * '+'('+z2+')'+' = '+real+' + i'+imag
 
     elif request.GET.get('div') == "":
-        ca = z1c/z2c #complex answer
+        ca = z1c/z2c 
         real = str(ca.real)
         imag = str(ca.imag)
-        answer = 'z + w = '+'('+z1+')'+' + '+'('+z2+')'+' = '+real+' + i'+imag
+        answer = 'z / w = '+'('+z1+')'+' / '+'('+z2+')'+' = '+real+' + i'+imag
 
     template = 'calc/algcalc/alganswer.html'
 
@@ -93,24 +97,42 @@ def triganswer(request):
     zt1 = str(request.GET.get('znt1'))
     zt2 = str(request.GET.get('znt2'))
     zt = str(request.GET.get('znt'))
+    zn = str(request.Get.get('n'))
 
     def zvalue(func):
         zt = []
         for i in func:
             zt.append(i)
         return zt
+    
     zt1 = zvalue(return_trig_complex(zt1))
     zt2 = zvalue(return_trig_complex(zt2))
     zt = zvalue(return_trig_complex(zt))
 
-    # if request.GET.get('mult') == "":
-    #     answer = 
+    if request.GET.get('mult') == "":
+        mult = [] 
+        mult.append(zt1[0] + zt2[0])
+        mult.append(zt1[1] + zt2[1])
+        mult.append(zt1[2] + zt2[2])
+        answer = mult
 
-    # elif request.GET.get('div') == "":
-    #     answer = 
+    elif request.GET.get('div') == "":
+        div = [] 
+        div.append(zt1[0]/zt2[0])
+        div.append(zt1[1] - zt2[1])
+        div.append(zt1[2] - zt2[2])
+        answer = div
 
-    # elif request.GET.get('^') == "":
-    #     answer = 
+    elif request.GET.get('exp') == "":
+        exp = [] 
+        exp.append(zt[0]**int(zn))
+        exp.append(zt[1]*int(zn))
+        exp.append(zt[2]*int(zn))
+        answer = exp
 
     # elif request.GET.get('sqrt') == "":
-    #     answer = 
+    #     zsqrt = []
+
+    #     answer = zsqrt
+
+    return answer
