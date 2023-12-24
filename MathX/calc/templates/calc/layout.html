@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="{% static 'calc/img/favicon.png' %}" type="image">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css.map' %}">
     <link rel="stylesheet" href="{% static 'calc/css/layout.css' %}">
     <title>
       {% block title %}
@@ -17,44 +18,47 @@
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
             crossorigin="anonymous">
     </script>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'main' %}">
-          <img src="{% static 'calc/img/logo.png' %}" id="logo">
-        </a>
-        <button class="navbar-toggler" 
-                type="button" 
-                data-bs-toggle="collapse" 
-                data-bs-target="#navbarNavAltMarkup" 
-                aria-controls="navbarNavAltMarkup" 
-                aria-expanded="false" 
-                aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <h3>КОМПЛЕКСНЫЕ ЧИСЛА</h3>
-            <ul>
-              <a href="{% url 'algcalc' %}">
-                <li>Операции в алгебраической форме</li>
-              </a>
-              <a href="{% url 'algtotrig' %}">
-                <li>Перевод из алгебраической формы в тригонометрическую</li>
-              </a>
-              <a href="{% url 'trigcalc' %}">
-                <li>Операции в тригонометрической форме</li>
-              </a>
-            </ul>
+    <div class="navtop">
+      <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary" id="nv"> -->
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'main' %}">
+            <img src="{% static 'calc/img/logo.png' %}" id="logo">
+          </a>
+          <button class="navbar-toggler" 
+                  type="button" 
+                  data-bs-toggle="collapse" 
+                  data-bs-target="#navbarNavAltMarkup" 
+                  aria-controls="navbarNavAltMarkup" 
+                  aria-expanded="false" 
+                  aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <h3>КОМПЛЕКСНЫЕ ЧИСЛА</h3>
+              <ul>
+                <a href="{% url 'algcalc' %}">
+                  <li>Операции в алгебраической форме</li>
+                </a>
+                <a href="{% url 'algtotrig' %}">
+                  <li>Перевод из алгебраической формы в тригонометрическую</li>
+                </a>
+                <a href="{% url 'trigcalc' %}">
+                  <li>Операции в тригонометрической форме</li>
+                </a>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
     <main>
       {% block content %}
       {% endblock %}
     </main>
   </body>
-  <footer class="border-top text-center py-3">
+  <footer class="border-top py-3">
     <p>
       © 2023 Copyright Math-<span style="color:#ff6d00">X</span>
     </p>

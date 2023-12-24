@@ -4,11 +4,11 @@
   Операции в тригонометрической форме
 {% endblock %}
 {% block content %}
-<div class="im">
-  <img src="{% static 'calc/img/trigcalc.png' %}">
-</div>
 <div class="features">
+  <h3>Формат ввода комплексного числа:</h3>
+  <img src="{% static 'calc/img/trigformat.png' %}">
   <form action="triganswer">
+    {% csrf_token %}
     <input type="text" name="znt1" placeholder="Введите КЧ 1">
     <br>
     <br> 
@@ -18,17 +18,16 @@
     <button type="submit" name="mult">Умножение</button>
     <button type="submit" name="div">Деление</button>
     <br>
-    <div class="im">
-      <img src="{% static 'calc/img/trigcalcexp.png' %}">
-    </div>
-    <br> 
-    <input type="text" name="znt" placeholder="Введите КЧ">
+    <br>
+    <input type="text" name="zr" placeholder="Введите модуль КЧ">
+    <br>
+    <br>
+    <input type="text" name="zfi" placeholder="Введите аргумент КЧ">
     <br>
     <br>
     <input type="text" name="zn" placeholder="Введите степень"> 
     <button type="submit" name="exp">Возведение в степень</button>
-    <!-- <button type="submit" name="sqrt">SQRT</button>    -->
   </form>
-</div>
+  <img src="{% static 'calc/img/trigcalc.png' %}">
 {% endblock %}
 

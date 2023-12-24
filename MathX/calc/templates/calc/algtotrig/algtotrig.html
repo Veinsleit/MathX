@@ -4,16 +4,20 @@
   Перевод из алгебраической формы в тригонометрическую
 {% endblock %}
 {% block content %}
-  <div class="im">
-    <img src="{% static 'calc/img/algtotrig.png' %}">
-  </div>
   <div class="features">
-    <h1>Формат ввода комплексного числа (КЧ): x + iy</h1>
+    <h3>Формат ввода комплексного числа:</h3>
+    <h3>x + iy</h3>
     <form action="convz">
-      <input type="text" name="zin" placeholder="Введите КЧ">
+      {% csrf_token %}
+      <br>
+      <br>
+      z = <input type="text" name="zin" placeholder="Например 15 + i5">
       <br>
       <br>
       <button type="submit" name="convert">Перевести</button>
+      <br>
+      <br>
     </form>
+    <img src="{% static 'calc/img/algtotrig.png' %}">
   </div>
 {% endblock %}

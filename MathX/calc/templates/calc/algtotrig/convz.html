@@ -4,13 +4,13 @@
   Перевод из алгебраической формы в тригонометрическую
 {% endblock %}
 {% block content %}
-  <div class="im">
-    <img src="{% static 'calc/img/algtotrig.png' %}">
-  </div>
   <div class="features">
     Ответ: 
     <p>{{zconv}}</p>
-    <a href="{% url 'algtotrig' %}">Назад</a> 
+    <a href="{% url 'algtotrig' %}">Назад</a>
+    <br>
+    <br> 
+    <img src="{% static 'calc/img/algtotrig.png' %}">
   </div>
 {% endblock %}
 

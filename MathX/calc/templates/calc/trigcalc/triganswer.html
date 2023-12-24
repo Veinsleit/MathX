@@ -4,12 +4,12 @@
   Операции в тригонометрической форме
 {% endblock %}
 {% block content %}
-  <div class="im">
-    <img src="{% static 'calc/img/trigcalc.png' %}">
-  </div>
   <div class="features">
     Ответ: 
     <p>{{answer}}</p> 
     <a href="{% url 'trigcalc' %}">Назад</a>
+    <br>
+    <br>
+    <img src="{% static 'calc/img/trigcalc.png' %}">
   </div>
 {% endblock %}

@@ -1,63 +1,68 @@
+#logo {
+    margin-left: 2.5%;
+    height: 100%;
+    width: 100%;
+}
+
 body {
     background: #2c2c2c;
-}
-
-/* .center {
-    margin: auto;
-    width: 60%;
-    border: 3px solid #a5addb;
-    padding: 10px;
-  } */
-
-#logo {
-    height: 200px;
-    width: auto;
-}
-
-body {
-    /* float: left; */
-    background:  #2c2c2c;
-    /* width: 30%;
-    padding: 2.25%;
-    height: 100vh; */
     color: white;
-    /* border-right: 5px solid #ff6d00; */
 }
 
-/* aside img {
-    width: 315px;
-    height: 200px;
-} */
-
-body nav .navbar-nav h3 {
-    margin-top: 60px;
+body .navtop {
+    background: black;
+    color: white;
+    border-bottom: 10px solid #ff6d00;
 }
 
-/* body nav {
-    margin-top: 60px;
-    border-bottom: 20px solid #ff6d00;
-} */
+body .navbar-nav {
+    background: black;
+}
+
+body .navbar-nav h3 {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    text-align: center;
+}
+
+body .navbar-toggler {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5%;
+    margin-bottom: 2.5%;
+    color:white;
+    background: #ff6d00;
+}
 
 body nav .navbar-nav a {
     text-decoration: none;
     text-align: left;
+    list-style: square ;
 }
 
 body nav .navbar-nav ul li, footer a {
     color: white;
-    margin-top: 20px;
     transition: transform .6s ease;
 }
 
-body nav .navbar-nav ul li:hover, ul a:hover, footer a:hover, main .features a:hover {
+body nav .navbar-nav ul li:hover,
+     ul a:hover,
+     footer a:hover, 
+     main .features a:hover
+{
     color: #ff6d00;
     text-decoration: none;
     transform: scale(1.05);
 }
 
 footer {
-    margin-top: 250px;
-    color: #fff;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    background: black;
 }
 
 footer a {
@@ -65,11 +70,27 @@ footer a {
     text-decoration: none;
 }
 
+body::after {
+    content: '';
+    display: block;
+    height: 100px;
+}
+
 main .features {
-    float: center;
-    color: #fff;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
-    width: 70%;
+    color: #fff;
+    width: 80%;
+    height: 100%;
+}
+
+main .features img {
+    text-align: center;
+    width: 100%;
+    height: 100%
 }
 
 main .features a {
@@ -79,39 +100,18 @@ main .features a {
     width: 70%;
 }
 
-main .about {
-    float: left;
-    color: #fff;
-    text-align: center;
-    width: 70%;
-    margin-top: 20px;
-}
-
-main .contacts {
-    float: left;
-    color: #fff;
-    text-align: center;
-    width: 70%;
-    margin-top: 20px;
-}
-
-main .main {
-    color: #fff;
-    margin-top: 150px;
-}
-
-body main {
+main .about{
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    color: #fff;
+    height: 100%;
+    width: 70%;
+    line-height: 1.0;
 }
 
-body div {
-    margin-left: 100px;
-    background: #2c2c2c;
-    text-align: center;
-
-}
 
 
 

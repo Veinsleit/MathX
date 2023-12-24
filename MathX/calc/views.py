@@ -73,10 +73,10 @@ def convz(request):
     x = float(num[0].strip())
     y = float((num[1].strip())[1:])
 
-    r = sqrt(x**2+y**2)
-    fi = atan(y/x)
+    r = round(sqrt(x**2+y**2), 2)
+    fi = round(atan(y/x), 2)
 
-    zconv = f'{r}(cos{fi} + isin{fi})'
+    zconv = f'{r}(cos({fi}) + isin({fi}))'
 
     return render(request, 'calc/algtotrig/convz.html', {'zconv': zconv})
 
@@ -84,7 +84,6 @@ def trigcalc(request):
     return render(request, 'calc/trigcalc/trigcalc.html')
 
 def return_trig_complex(num):
-    """Преобразование входного КЧ в тригонометрическую форму""" 
     num = num.split('+')
     print(num)
     r = float(num[0].split('(')[0])
@@ -99,8 +98,6 @@ def return_trig_complex(num):
 def triganswer(request):
     zt1 = str(request.GET.get('znt1'))
     zt2 = str(request.GET.get('znt2'))
-    zt = str(request.GET.get('znt'))
-    zn = str(request.GET.get('n'))
 
     def zvalue(func):
         zt = []
@@ -110,7 +107,6 @@ def triganswer(request):
     
     zt1 = zvalue(return_trig_complex(zt1))
     zt2 = zvalue(return_trig_complex(zt2))
-
 
     if request.GET.get('mult') == "":
         mult = [] 
@@ -125,18 +121,18 @@ def triganswer(request):
         div.append(zt1[1] - zt2[1])
         div.append(zt1[2] - zt2[2])
         answer = div
+    
+    return answer
 
-    elif request.GET.get('exp') == "":
-        zt = zvalue(return_trig_complex(zt))
+def triganswer(request):
+    zr = str(request.GET.get('zr'))
+    zfi = str(request.GET.get('zfi'))
+    zn = str(request.GET.get('n'))
+
+    if request.GET.get('exp') == "":
         exp = [] 
-        exp.append(zt[0]**int(zn))
-        exp.append(zt[1]*int(zn))
-        exp.append(zt[2]*int(zn))
-        answer = exp
-
-    # elif request.GET.get('sqrt') == "":
-    #     zsqrt = []
-
-    #     answer = zsqrt
+        exp.append(zr**int(zn))
+        exp.append(zfi*int(zn))
+        answer = 'z = '+exp[0]+'(cos('+exp[1]+') + ('+'sin('+exp[1]+'))'
 
     return answer
