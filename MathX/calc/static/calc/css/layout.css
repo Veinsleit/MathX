@@ -101,6 +101,8 @@ main .main {
 }
 
 body main {
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
 }
 
@@ -108,7 +110,6 @@ body div {
     margin-left: 100px;
     background: #2c2c2c;
     text-align: center;
-    
 
 }
 

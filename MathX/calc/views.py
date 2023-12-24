@@ -3,14 +3,17 @@ from django.shortcuts import render
 from math import sqrt, atan
 
 def main(request):
+    """Главная страница"""
     template = 'calc/main.html'
     return render(request, template)
 
 def about(request):
+    """Страница информации о сайте"""
     template = 'calc/about.html'
     return render(request, template)
 
 def contacts(request):
+    """Страница контактов"""
     template = 'calc/contacts.html'
     return render(request, template)
 
@@ -67,8 +70,8 @@ def convz(request):
 
     num = zin.split('+')
 
-    x = float(num[0])
-    y = float((num[1])[:-1])
+    x = float(num[0].strip())
+    y = float((num[1].strip())[1:])
 
     r = sqrt(x**2+y**2)
     fi = atan(y/x)
@@ -97,7 +100,7 @@ def triganswer(request):
     zt1 = str(request.GET.get('znt1'))
     zt2 = str(request.GET.get('znt2'))
     zt = str(request.GET.get('znt'))
-    zn = str(request.Get.get('n'))
+    zn = str(request.GET.get('n'))
 
     def zvalue(func):
         zt = []
@@ -107,7 +110,7 @@ def triganswer(request):
     
     zt1 = zvalue(return_trig_complex(zt1))
     zt2 = zvalue(return_trig_complex(zt2))
-    zt = zvalue(return_trig_complex(zt))
+
 
     if request.GET.get('mult') == "":
         mult = [] 
@@ -124,6 +127,7 @@ def triganswer(request):
         answer = div
 
     elif request.GET.get('exp') == "":
+        zt = zvalue(return_trig_complex(zt))
         exp = [] 
         exp.append(zt[0]**int(zn))
         exp.append(zt[1]*int(zn))
