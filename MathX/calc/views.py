@@ -1,11 +1,42 @@
 from django.shortcuts import render
+import random
 
 from math import sqrt, atan
 
+q1 = [
+    'Математика — это ключ и дверь ко всем наукам.',
+    '— Галилео Галилей'
+        ]
+q2 = [
+    'Нельзя быть настоящим математиком, не будучи немного поэтом.', 
+    '— Карл Теодор Вильгельм Вейерштрасс'
+        ]
+q3 = [
+    'Если теорему так и не смогли доказать, она становится аксиомой.', 
+    '— Евклид'
+        ]
+q4 = [
+    'Математику уже затем учить надо, что она ум в порядок приводит.', 
+    '— Михаил Васильевич Ломоносов'
+        ]
+q5 = [
+    'Величие человека - в его способности мыслить.', 
+    '— Блез Паскаль'
+        ]
+
 def main(request):
-    """Главная страница"""
     template = 'calc/main.html'
-    return render(request, template)
+    select = random.randint(1, 5)
+    qlist = [q1, q2, q3, q4, q5]
+    index = 0
+    for i in qlist:
+        index +=1
+        if select == index:
+            quote = i[0]
+            author = i[1]
+            index = 0
+
+    return render(request, template, {'quote':quote, 'author':author})
 
 def about(request):
     """Страница информации о сайте"""
@@ -85,54 +116,53 @@ def trigcalc(request):
 
 def return_trig_complex(num):
     num = num.split('+')
-    print(num)
-    r = float(num[0].split('(')[0])
-    print(r)
-    cosfi = float(num[0].split('(')[1][3:])
-    print(cosfi)
-    sinfi = float(num[1][4:-1])
-    print(sinfi)
+    r = float(num[0].strip().split('(')[0])
+    cosfi = float(num[0].strip().split('(')[1][3:])
+    sinfi = float(num[1].strip()[4:-1])
+    clist = []
+    clist.append(r)
+    clist.append(cosfi)
+    clist.append(sinfi)
 
-    return r, cosfi, sinfi
+    return clist
 
 def triganswer(request):
     zt1 = str(request.GET.get('znt1'))
     zt2 = str(request.GET.get('znt2'))
+    zr = str(request.GET.get('zr'))
+    zfi = str(request.GET.get('zfi'))
+    zn = str(request.GET.get('zn'))
 
     def zvalue(func):
         zt = []
         for i in func:
             zt.append(i)
         return zt
-    
-    zt1 = zvalue(return_trig_complex(zt1))
-    zt2 = zvalue(return_trig_complex(zt2))
 
     if request.GET.get('mult') == "":
+        zt1 = return_trig_complex(zt1)
+        zt2 = return_trig_complex(zt2)
         mult = [] 
         mult.append(zt1[0] + zt2[0])
         mult.append(zt1[1] + zt2[1])
         mult.append(zt1[2] + zt2[2])
-        answer = mult
+        answer = 'z = '+str(mult[0])+'(cos('+str(mult[1])+') + isin('+str(mult[2])+'))'
 
     elif request.GET.get('div') == "":
+        zt1 = zvalue(return_trig_complex(zt1))
+        zt2 = zvalue(return_trig_complex(zt2))
         div = [] 
         div.append(zt1[0]/zt2[0])
         div.append(zt1[1] - zt2[1])
         div.append(zt1[2] - zt2[2])
-        answer = div
-    
-    return answer
+        answer = 'z = '+str(div[0])+'(cos('+str(div[1])+') + isin('+str(div[2])+'))'
 
-def triganswer(request):
-    zr = str(request.GET.get('zr'))
-    zfi = str(request.GET.get('zfi'))
-    zn = str(request.GET.get('n'))
-
-    if request.GET.get('exp') == "":
+    elif request.GET.get('exp') == "":
         exp = [] 
-        exp.append(zr**int(zn))
-        exp.append(zfi*int(zn))
-        answer = 'z = '+exp[0]+'(cos('+exp[1]+') + ('+'sin('+exp[1]+'))'
+        exp.append(float(zr)**int(zn))
+        exp.append(float(zfi)*int(zn))
+        answer = 'z = '+str(exp[0])+'(cos('+str(exp[1])+') + ('+'sin('+str(exp[1])+'))'
 
-    return answer
+    template = 'calc/trigcalc/triganswer.html'
+    
+    return render(request, template, {'answer': answer})

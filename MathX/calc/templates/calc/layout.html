@@ -22,7 +22,7 @@
       <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary" id="nv"> -->
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-          <a class="navbar-brand" href="{% url 'main' %}">
+          <a class="navbar-brand" href="{% url 'main' %}" id="la">
             <img src="{% static 'calc/img/logo.png' %}" id="logo">
           </a>
           <button class="navbar-toggler" 
@@ -49,6 +49,13 @@
                 </a>
               </ul>
             </div>
+            <footer class="py-3" id="info">
+              <p>
+                © 2023 Copyright Math-<span style="color:#ff6d00">X</span>
+              </p>
+              <a href="{% url 'about' %}">О нас</a>  
+              <a href="{% url 'contacts' %}">Контакты</a>
+            </footer> 
           </div>
         </div>
       </nav>
@@ -58,11 +65,11 @@
       {% endblock %}
     </main>
   </body>
-  <footer class="border-top py-3">
+  <!-- <footer class="border-top py-3" id="info">
     <p>
       © 2023 Copyright Math-<span style="color:#ff6d00">X</span>
     </p>
     <a href="{% url 'about' %}">О нас</a>  
     <a href="{% url 'contacts' %}">Контакты</a>
-  </footer> 
+  </footer>  -->
 </html>
