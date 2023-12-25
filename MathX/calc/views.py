@@ -35,6 +35,7 @@ def main(request):
             quote = i[0]
             author = i[1]
             index = 0
+            break
 
     return render(request, template, {'quote':quote, 'author':author})
 
