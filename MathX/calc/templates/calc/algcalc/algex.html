@@ -1,0 +1,30 @@
+{% extends 'calc/layout.html' %}
+{% load static %}
+{% block title %}
+  Операции в алгебраической форме
+{% endblock %}
+{% block content %}
+  <div class="features">
+    <h3>Ошибка в формате ввода</h3>
+    <h3>Формат ввода комплексного числа:</h3>
+    <h3>x + iy</h3>
+    <form action="alganswer">
+      <br>
+      <br> 
+      {% csrf_token %}
+      z = <input type="text" name="zn1" placeholder="Например 10 + i15">
+      <br>
+      <br> 
+      w = <input type="text" name="zn2" placeholder="Например 5 + i10">
+      <br>
+      <br>
+      <button type="submit" name="sum">Сложение</button>
+      <button type="submit" name="diff">Вычитание</button>
+      <button type="submit" name="mult">Умножение</button>
+      <button type="submit" name="div">Деление</button>
+      <br>
+      <br> 
+    </form>
+    <img src="{% static 'calc/img/algcalc.png' %}">
+  </div>
+{% endblock %}
