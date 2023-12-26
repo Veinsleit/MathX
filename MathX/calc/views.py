@@ -70,7 +70,7 @@ def alganswer(request):
         z1c = return_complex_number(z1)
         z2c = return_complex_number(z2)
     except:
-        return redirect('algexcept')
+        return redirect('algex')
 
     if request.GET.get('sum') == "":
         ca = z1c+z2c 
@@ -129,7 +129,7 @@ def alganswer(request):
     return render(request, template, {'answer': answer})
 
 
-def algexcept(request):
+def algex(request):
 
     template = 'calc/algcalc/algex.html'
     return render(request, template)
@@ -158,7 +158,7 @@ def convz(request):
     else:
         fi = round(atan(y/x), 2)
 
-    zconv = f'{r}(cos({fi}) + isin({fi}))'
+    zconv = f'z = {r}(cos({fi}) + isin({fi}))'
 
     template = 'calc/algtotrig/convz.html'
 
@@ -166,7 +166,7 @@ def convz(request):
 
 def convzex(request):
 
-    template = 'calc/algtotrig/algtotrigex.html'
+    template = 'calc/algtotrig/convzex.html'
     return render(request, template)
 
 def trigcalc(request):
